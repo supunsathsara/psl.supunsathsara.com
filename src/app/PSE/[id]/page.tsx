@@ -49,7 +49,7 @@ export default function Home({ params }: any) {
           { event: 'INSERT', schema: 'public', table: 'PS-experts' },
           (payload) => {
             setExperts((prevExperts) => [payload.new as Expert, ...prevExperts]);
-            console.log('Change received!', payload);
+            //console.log('Change received!', payload);
           }
         )
         .subscribe();

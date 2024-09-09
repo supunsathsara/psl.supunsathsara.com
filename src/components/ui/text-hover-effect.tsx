@@ -97,7 +97,7 @@ export const TextHoverEffect = ({
         strokeWidth="0.3"
         className={cn(
           "font-[helvetica] font-bold stroke-neutral-200 dark:stroke-neutral-800 fill-transparent text-lg",
-          size === "sm" ? "text-lg" : size === "md" ? "text-xl" : "text-5xl"
+          size === "sm" ? "text-lg" : size === "md" ? "text-3xl" : "text-5xl"
         )}
         style={{ opacity: hovered ? 0.7 : 0 }}
       >
@@ -111,7 +111,7 @@ export const TextHoverEffect = ({
         strokeWidth="0.3"
         className={cn(
           "font-[helvetica] font-bold fill-transparent text-lg stroke-neutral-200 dark:stroke-neutral-800",
-          size === "sm" ? "text-lg" : size === "md" ? "text-xl" : "text-5xl"
+          size === "sm" ? "text-lg" : size === "md" ? "text-3xl" : "text-5xl"
         )}
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
@@ -135,7 +135,7 @@ export const TextHoverEffect = ({
         mask="url(#textMask)"
         className={cn(
           "font-[helvetica] font-bold fill-transparent",
-          size === "sm" ? "text-lg" : size === "md" ? "text-xl" : "text-5xl"
+          size === "sm" ? "text-lg" : size === "md" ? "text-3xl" : "text-5xl"
         )}
       >
         {text}

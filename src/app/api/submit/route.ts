@@ -1,6 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 import axios from "axios";
-import { createServiceClient } from "@/utils/superbase/server";
+import { createServiceClient } from "@/utils/supabase/server";
 
 export async function GET(request: Request) {
   return NextResponse.json({ message: "Invalid Method" });

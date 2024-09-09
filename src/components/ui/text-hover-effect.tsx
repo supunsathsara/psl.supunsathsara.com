@@ -1,14 +1,17 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export const TextHoverEffect = ({
   text,
   duration,
+  size,
 }: {
   text: string;
   duration?: number;
   automatic?: boolean;
+  size?: 'sm' | 'md' | 'lg';
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -92,7 +95,10 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.3"
-        className="font-[helvetica] font-bold stroke-neutral-200 dark:stroke-neutral-800 fill-transparent text-lg  "
+        className={cn(
+          "font-[helvetica] font-bold stroke-neutral-200 dark:stroke-neutral-800 fill-transparent text-lg",
+          size === "sm" ? "text-lg" : size === "md" ? "text-xl" : "text-5xl"
+        )}
         style={{ opacity: hovered ? 0.7 : 0 }}
       >
         {text}
@@ -103,7 +109,10 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.3"
-        className="font-[helvetica] font-bold fill-transparent text-lg   stroke-neutral-200 dark:stroke-neutral-800"
+        className={cn(
+          "font-[helvetica] font-bold fill-transparent text-lg stroke-neutral-200 dark:stroke-neutral-800",
+          size === "sm" ? "text-lg" : size === "md" ? "text-xl" : "text-5xl"
+        )}
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -124,7 +133,10 @@ export const TextHoverEffect = ({
         stroke="url(#textGradient)"
         strokeWidth="0.3"
         mask="url(#textMask)"
-        className="font-[helvetica] font-bold fill-transparent text-lg  "
+        className={cn(
+          "font-[helvetica] font-bold fill-transparent",
+          size === "sm" ? "text-lg" : size === "md" ? "text-xl" : "text-5xl"
+        )}
       >
         {text}
       </text>

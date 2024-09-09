@@ -81,27 +81,27 @@ export default function JokesPage() {
   }, []);
 
   return (
-         <main className="min-h-screen w-full overflow-hidden bg-gradient-to-b from-neutral-950 to-neutral-800">
-          <BackgroundBeamsWithCollision className="h-full w-full bg-center overflow-y-auto">
-            <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
-              {/* <h1 className="text-4xl font-bold text-white mb-8 text-center">
+    <main className="min-h-screen w-full overflow-hidden bg-gradient-to-b from-neutral-950 to-neutral-800">
+      <BackgroundBeamsWithCollision className="h-full w-full bg-center overflow-y-auto">
+        <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+          {/* <h1 className="text-4xl font-bold text-white mb-8 text-center">
                 Postman API 101 Jokes 🚀
               </h1> */}
-              <TextHoverEffect text="Postman API 101 Jokes 🚀" />
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {jokes.map((joke, index) => (
-                  <JokeCard
-                    id={joke.id}
-                    key={index}
-                    joke={joke.joke}
-                    author={joke.author}
-                    source={joke.source}
-                  />
-                ))}
-              </div>
-            </div>
-          </BackgroundBeamsWithCollision>
-        </main>
+          <TextHoverEffect text="Postman API 101 Jokes 🚀" size="sm" />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {jokes.map((joke, index) => (
+              <JokeCard
+                id={joke.id}
+                key={index}
+                joke={joke.joke}
+                author={joke.author}
+                source={joke.source}
+              />
+            ))}
+          </div>
+        </div>
+      </BackgroundBeamsWithCollision>
+    </main>
   );
 }

@@ -1,6 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 import axios from "axios";
-import { createServiceClient } from "@/utils/supabase/server";
+import { supabase } from "@/utils/supabase/serviceUser";
 
 export async function GET(request: Request) {
   return NextResponse.json({ message: "Invalid Method" });
@@ -52,7 +52,6 @@ created_at
 timestamp with time zone
 string	*/
       //insert data to supabase
-      const supabase = createServiceClient();
       const { data, error } = await supabase
         .from("PS-experts")
         .insert([{ 

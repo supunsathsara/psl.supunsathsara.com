@@ -62,6 +62,12 @@ const ChallengeWinner: React.FC<ChallengeWinnerProps> = ({
           height={150}
           className="rounded-full"
           style={{ aspectRatio: "150/150", objectFit: "cover" }}
+          onError={(e) => {
+            e.currentTarget.src = `https://placehold.co/300x300/png?text=${name
+              .split(" ")
+              .map((word) => word[0])
+              .join("")}`;
+          }}
         />
       </div>
       <h3 className="mt-4 text-xl text-white font-bold text-center">{name}</h3>

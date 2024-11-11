@@ -1,12 +1,16 @@
-import React from 'react';
+import React from "react";
 
 interface ChallengeParticipantsProps {
-    place: number;
+  place: number;
   imageSrc: string;
   name: string;
 }
 
-const ChallengeParticipants: React.FC<ChallengeParticipantsProps> = ({ imageSrc, name,place }) => {
+const ChallengeParticipants: React.FC<ChallengeParticipantsProps> = ({
+  imageSrc,
+  name,
+  place,
+}) => {
   return (
     <div className="bg-background/55 rounded-lg shadow-lg overflow-hidden z-10">
       <div className="flex items-center justify-center p-3">
@@ -17,6 +21,12 @@ const ChallengeParticipants: React.FC<ChallengeParticipantsProps> = ({ imageSrc,
           height={100}
           className="rounded-full"
           style={{ aspectRatio: "100/100", objectFit: "cover" }}
+          onError={(e) => {
+            e.currentTarget.src = `https://placehold.co/300x300/png?text=${name
+              .split(" ")
+              .map((word) => word[0])
+              .join("")}`;
+          }}
         />
       </div>
       <div className="px-4 text-center">
